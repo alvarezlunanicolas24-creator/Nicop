@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Evidencias | Desarrollo de Aplicaciones Web</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        tech: {
+                            dark: '#0f172a',
+                            card: '#1e293b',
+                            border: '#334155'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f1f5f9;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-blue-500 selection:text-white">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-violet-600 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/30">
+                    <i class="fa-solid font-mono text-lg">&lt;/&gt;</i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-base sm:text-lg tracking-tight">Portafolio<span class="text-blue-500">Dev</span></h1>
+                    <p class="text-xs text-slate-400 hidden sm:block">Submódulos de Programación Web</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Semestre Activo
+                </span>
+                <a href="#contacto" class="text-xs font-semibold px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors border border-slate-700">
+                    Perfil
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-grow">
+
+        <!-- Student Profile Dashboard Card -->
+        <section class="glass-card rounded-2xl p-6 sm:p-8 mb-10 relative overflow-hidden">
+            <!-- Background Decorative Glow -->
+            <div class="absolute -right-20 -top-20 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-20 -bottom-20 w-72 h-72 bg-violet-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-6 relative z-10">
+                <!-- Avatar / Photo -->
+                <div class="relative group">
+                    <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-tr from-slate-800 to-slate-700 p-1 shadow-xl border border-slate-700 overflow-hidden">
+                        <img src="https://placehold.co/200x200/1e293b/60a5fa?text=Estudiante" 
+                             alt="Fotografía del Estudiante" 
+                             class="w-full h-full object-cover rounded-xl"
+                             onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e293b/ffffff?text=Dev+Student';">
+                    </div>
+                    <div class="absolute -bottom-2 -right-2 bg-blue-600 text-white p-1.5 rounded-lg text-xs shadow-md" title="Verificado">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                </div>
+
+                <!-- Info Details -->
+                <div class="flex-1 text-center md:text-left space-y-2">
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-2">
+                        <span class="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                            Técnico en Programación
+                        </span>
+                        <span class="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-violet-500/10 text-violet-400 border border-violet-500/20">
+                            Módulo Profesional IV
+                        </span>
+                    </div>
+
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+                        <span class="gradient-text">Nombre del Estudiante</span>
+                    </h2>
+
+                    <p class="text-sm text-slate-400 max-w-2xl">
+                        Bienvenido a mi portafolio digital de evidencias. Aquí recopilo y documento los proyectos, prácticas de laboratorio y desarrollos web construidos e implementados durante el ciclo escolar.
+                    </p>
+
+                    <!-- Badges Grid -->
+                    <div class="pt-3 flex flex-wrap justify-center md:justify-start gap-4 text-xs text-slate-300">
+                        <div class="flex items-center gap-2 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-id-card text-blue-400"></i>
+                            <span><strong>No. Control:</strong> 2130000000000</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-graduation-cap text-violet-400"></i>
+                            <span><strong>Grupo:</strong> 6° Semestre</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-laptop-code text-emerald-400"></i>
+                            <span><strong>Especialidad:</strong> Desarrollo Web</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Quick Stat -->
+                <div class="w-full md:w-auto bg-slate-900/80 p-4 rounded-xl border border-slate-800 flex md:flex-col justify-between items-center gap-3">
+                    <div class="text-center md:text-right">
+                        <span class="text-xs text-slate-400 block">Avance General</span>
+                        <span class="text-2xl font-bold text-blue-400">100%</span>
+                    </div>
+                    <div class="w-24 bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-500 to-violet-500 h-full w-full"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search and Filter Bar -->
+        <section class="mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <!-- Filter Tabs -->
+            <div class="flex items-center p-1 bg-slate-900 rounded-xl border border-slate-800 w-full sm:w-auto overflow-x-auto">
+                <button onclick="filterPractices('all')" id="tab-all" class="filter-tab px-4 py-2 rounded-lg text-xs font-semibold transition-all bg-blue-600 text-white shadow-md">
+                    Todos los Módulos
+                </button>
+                <button onclick="filterPractices('construye')" id="tab-construye" class="filter-tab px-4 py-2 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:text-white">
+                    Construye
+                </button>
+                <button onclick="filterPractices('implementa')" id="tab-implementa" class="filter-tab px-4 py-2 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:text-white">
+                    Implementa
+                </button>
+            </div>
+
+            <!-- Search input -->
+            <div class="relative w-full sm:w-72">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+                <input type="text" id="searchInput" onkeyup="searchPractices()" placeholder="Buscar práctica o tema..." 
+                       class="w-full pl-9 pr-4 py-2 bg-slate-900 border border-slate-800 rounded-xl text-xs focus:outline-none focus:border-blue-500 text-slate-200 placeholder-slate-500 transition-colors">
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- BLOCK 1: CONSTRUYE APLICACIONES WEB -->
+        <!-- ========================================== -->
+        <section id="sec-construye" class="mb-14 module-section">
+            <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                        <i class="fa-solid fa-code text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                            Construye Aplicaciones Web
+                            <span class="text-xs px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-normal border border-blue-500/30">Submódulo 1</span>
+                        </h3>
+                        <p class="text-xs text-slate-400">Diseño frontend, estructura HTML5, estilos CSS3 y lógica interactiva con JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Actividad 8 (LINK DIRECTO) -->
+                <div class="practice-card glass-card rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1" data-title="actividad 8 act8 html javascript formulario dinamico dom" data-module="construye">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                Disponible
+                            </span>
+                            <span class="text-xs font-mono text-slate-400">act8.html</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <h4 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+                                Actividad 8: Práctica Dinámica
+                            </h4>
+                            <p class="text-xs text-slate-400 mt-1 line-clamp-2">
+                                Aplicación de maquetación avanzada, manipulación de elementos del DOM y validación de formularios interactivos.
+                            </p>
+                        </div>
+
+                        <!-- Tech tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">HTML5</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">CSS3</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">JS / DOM</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                    <a href="act8.html" target="_blank" class="w-full py-2.5 px-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 transition-all">
+                        <span>Ver Práctica (act8.html)</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Actividad 9 (LINK DIRECTO) -->
+                <div class="practice-card glass-card rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1" data-title="actividad 9 act9 html ui ux eventos componentes" data-module="construye">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                Disponible
+                            </span>
+                            <span class="text-xs font-mono text-slate-400">act9.html</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <h4 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+                                Actividad 9: Componentes Web
+                            </h4>
+                            <p class="text-xs text-slate-400 mt-1 line-clamp-2">
+                                Implementación de eventos avanzados, consumo de datos dinámicos e interfaz de usuario interactiva y adaptable.
+                            </p>
+                        </div>
+
+                        <!-- Tech tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">HTML5</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Tailwind</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Eventos JS</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                    <a href="act9.html" target="_blank" class="w-full py-2.5 px-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 transition-all">
+                        <span>Ver Práctica (act9.html)</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Actividades Anteriores / Complementarias (Ejemplo adicional) -->
+                <div class="practice-card glass-card rounded-2xl p-5 flex flex-col justify-between opacity-80 hover:opacity-100 transition-all duration-300" data-title="actividad 7 estructuras basicas layout css grid" data-module="construye">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
+                                Completado
+                            </span>
+                            <span class="text-xs font-mono text-slate-500">act7.html</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <h4 class="text-lg font-bold text-slate-200">
+                                Actividad 7: Layout Grid & Flexbox
+                            </h4>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Maquetación adaptable mediante hojas de estilo CSS3 Grid y alineación con Flexbox.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-mono">CSS Grid</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-mono">Flexbox</span>
+                        </div>
+                    </div>
+
+                    <a href="act7.html" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium rounded-xl flex items-center justify-center gap-2 transition-colors border border-slate-700">
+                        <span>Ver Archivo</span>
+                        <i class="fa-solid fa-folder-open text-[10px]"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- BLOCK 2: IMPLEMENTA APLICACIONES WEB -->
+        <!-- ========================================== -->
+        <section id="sec-implementa" class="mb-10 module-section">
+            <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-xl bg-violet-500/10 text-violet-400 border border-violet-500/20">
+                        <i class="fa-solid fa-server text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                            Implementa Aplicaciones Web
+                            <span class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-300 font-normal border border-violet-500/30">Submódulo 2</span>
+                        </h3>
+                        <p class="text-xs text-slate-400">Servidores, bases de datos relacionales, hosting en la nube y consumo de servicios API.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid Cards for Future/In-Progress Practices -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Práctica Futura 1 -->
+                <div class="practice-card glass-card rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1" data-title="practica 1 base de datos mysql crud php servidor" data-module="implementa">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+                                En Proceso
+                            </span>
+                            <span class="text-xs font-mono text-slate-500">imp_act1.html</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <h4 class="text-lg font-bold text-white">
+                                Integración de Base de Datos
+                            </h4>
+                            <p class="text-xs text-slate-400 mt-1 line-clamp-2">
+                                Conexión a base de datos MySQL/MariaDB y operaciones CRUD para persistencia de datos.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">MySQL</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">PHP / Node</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">SQL</span>
+                        </div>
+                    </div>
+
+                    <button disabled class="w-full py-2.5 px-4 bg-slate-800/80 text-slate-500 text-xs font-semibold rounded-xl flex items-center justify-center gap-2 cursor-not-allowed border border-slate-800">
+                        <i class="fa-solid fa-lock text-[10px]"></i>
+                        <span>Próximamente</span>
+                    </button>
+                </div>
+
+                <!-- Práctica Futura 2 -->
+                <div class="practice-card glass-card rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1" data-title="practica 2 servidor web apache nginx hosting desplegar vercel netlify" data-module="implementa">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-violet-500/10 text-violet-400 border border-violet-500/20">
+                                Planeado
+                            </span>
+                            <span class="text-xs font-mono text-slate-500">imp_act2.html</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <h4 class="text-lg font-bold text-white">
+                                Despliegue en Servidor Nube
+                            </h4>
+                            <p class="text-xs text-slate-400 mt-1 line-clamp-2">
+                                Configuración de dominios, SSL y hosting estático/dinámico utilizando plataformas en la nube.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Hosting</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Vercel / GitHub</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">DNS</span>
+                        </div>
+                    </div>
+
+                    <button disabled class="w-full py-2.5 px-4 bg-slate-800/80 text-slate-500 text-xs font-semibold rounded-xl flex items-center justify-center gap-2 cursor-not-allowed border border-slate-800">
+                        <i class="fa-solid fa-clock text-[10px]"></i>
+                        <span>En Programación</span>
+                    </button>
+                </div>
+
+                <!-- Práctica Futura 3 -->
+                <div class="practice-card glass-card rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1" data-title="practica 3 api rest fetch async await JSON backend" data-module="implementa">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-violet-500/10 text-violet-400 border border-violet-500/20">
+                                Planeado
+                            </span>
+                            <span class="text-xs font-mono text-slate-500">imp_act3.html</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <h4 class="text-lg font-bold text-white">
+                                Consumo de APIs RESTful
+                            </h4>
+                            <p class="text-xs text-slate-400 mt-1 line-clamp-2">
+                                Conexión e intercambio de información mediante servicios web web utilizando Fetch API y peticiones asíncronas.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">REST API</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">JSON</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Async/Await</span>
+                        </div>
+                    </div>
+
+                    <button disabled class="w-full py-2.5 px-4 bg-slate-800/80 text-slate-500 text-xs font-semibold rounded-xl flex items-center justify-center gap-2 cursor-not-allowed border border-slate-800">
+                        <i class="fa-solid fa-clock text-[10px]"></i>
+                        <span>En Programación</span>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skill & Technologies Badge Summary Section -->
+        <section class="glass-card rounded-2xl p-6 mb-8 text-center sm:text-left">
+            <h4 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4 flex items-center justify-center sm:justify-start gap-2">
+                <i class="fa-solid fa-layer-group text-blue-400"></i>
+                Tecnologías y Herramientas del Módulo
+            </h4>
+            <div class="flex flex-wrap justify-center sm:justify-start gap-3 text-xs">
+                <div class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-lg flex items-center gap-2">
+                    <i class="fa-brands fa-html5 text-orange-500 text-sm"></i> HTML5
+                </div>
+                <div class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-lg flex items-center gap-2">
+                    <i class="fa-brands fa-css3-alt text-blue-500 text-sm"></i> CSS3
+                </div>
+                <div class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-lg flex items-center gap-2">
+                    <i class="fa-brands fa-js text-yellow-400 text-sm"></i> JavaScript (ES6+)
+                </div>
+                <div class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-lg flex items-center gap-2">
+                    <i class="fa-solid fa-wind text-sky-400 text-sm"></i> Tailwind CSS
+                </div>
+                <div class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-lg flex items-center gap-2">
+                    <i class="fa-brands fa-git-alt text-red-500 text-sm"></i> Git & Control de Versiones
+                </div>
+                <div class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-lg flex items-center gap-2">
+                    <i class="fa-solid fa-database text-emerald-400 text-sm"></i> Bases de Datos
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div class="flex items-center gap-2">
+                <span>© 2026 Portafolio de Evidencias</span>
+                <span>•</span>
+                <span>Desarrollo de Aplicaciones Web</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span>Docente: <strong class="text-slate-400">Nombre del Profesor</strong></span>
+                <span>•</span>
+                <a href="#top" class="text-blue-400 hover:underline">Volver arriba ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Filter by Submodule
+        function filterPractices(category) {
+            const tabs = document.querySelectorAll('.filter-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-blue-600', 'text-white', 'shadow-md');
+                tab.classList.add('text-slate-400');
+            });
+
+            const activeTab = document.getElementById(`tab-${category}`);
+            if (activeTab) {
+                activeTab.classList.add('bg-blue-600', 'text-white', 'shadow-md');
+                activeTab.classList.remove('text-slate-400');
+            }
+
+            const secConstruye = document.getElementById('sec-construye');
+            const secImplementa = document.getElementById('sec-implementa');
+
+            if (category === 'all') {
+                secConstruye.style.display = 'block';
+                secImplementa.style.display = 'block';
+            } else if (category === 'construye') {
+                secConstruye.style.display = 'block';
+                secImplementa.style.display = 'none';
+            } else if (category === 'implementa') {
+                secConstruye.style.display = 'none';
+                secImplementa.style.display = 'block';
+            }
+        }
+
+        // Live Search Filter
+        function searchPractices() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.practice-card');
+
+            cards.forEach(card => {
+                const searchData = card.getAttribute('data-title').toLowerCase();
+                if (searchData.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
