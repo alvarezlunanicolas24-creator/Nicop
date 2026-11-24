@@ -1,0 +1,17 @@
+body {
+    font-family: Tahoma;
+    font-size: 14px;
+}
+
+/*Estilo para la sección*/
+section {
+    background: #CCC;
+    max-width: 288px;
+    padding: 10px;
+}
+img {
+    width: 288px;
+}
+ul {
+    list-style: circle;
+}
